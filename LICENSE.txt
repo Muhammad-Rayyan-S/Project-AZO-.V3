@@ -1,0 +1,7 @@
+Copyright (c) 2025 Muhammad Rayyan
+
+This code and associated files are the intellectual property of Muhammad Rayyan.
+
+Unauthorized copying, distribution, modification, or use of this software is strictly prohibited unless with express written permission from the author.
+
+This repository is for educational or demonstration purposes only.

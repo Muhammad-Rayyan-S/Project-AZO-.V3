@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AZO.ai</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="bg-seperater"></div>
+    <div class="container">
+        <div class="header">
+            <h1>AZO <span> .v3</span></h1>
+
+
+
+            <div onclick=boxExpand(); class="box" >
+                <span id="reset-btn" class="close">New Chat</span>
+            </div>
+            
+
+        </div>
+        <div class="chat-box" id="chat-box">
+            <!-- messages will go here -->
+        </div>
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Ask Me About Rayyan...." />
+            <button onclick="sendMessage()" id="arrow">➤</button>
+        </div>
+    </div>
+
+    <script>
+        const input = document.getElementById("user-input");
+        const chatBox = document.getElementById("chat-box");
+    
+        async function sendMessage() {
+            const text = input.value.trim();
+            if (!text) return;
+    
+            // Append user message
+            const userBubble = document.createElement("div");
+            userBubble.className = "user-bubble";
+            userBubble.innerText = text;
+            chatBox.appendChild(userBubble);
+    
+            // Add loader below the user bubble (right-aligned)
+            const loader = document.createElement("div");
+            loader.className = "loader";
+            loader.innerHTML = `<img src="/static/loader.gif" alt="Thinking...">`;
+            chatBox.appendChild(loader);
+    
+            input.value = "";
+            chatBox.scrollTop = chatBox.scrollHeight;
+    
+            try {
+                const res = await fetch("/ask", {
+                    method: "POST",
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question: text })
+                });
+    
+                const data = await res.json();
+    
+                loader.remove(); // Remove loader
+    
+                const botBubble = document.createElement("div");
+                botBubble.className = "bot-bubble";
+                botBubble.innerHTML = data.reply;
+                chatBox.appendChild(botBubble);
+    
+                chatBox.scrollTop = chatBox.scrollHeight;
+            } catch (err) {
+                loader.remove();
+                const errorBubble = document.createElement("div");
+                errorBubble.className = "bot-bubble";
+                errorBubble.innerText = "⚠️ Error getting response.";
+                chatBox.appendChild(errorBubble);
+            }
+        }
+    
+        // Enter key to send
+        input.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+    
+        // Reset button
+        document.getElementById("reset-btn").addEventListener("click", async () => {
+            chatBox.innerHTML = '';
+            await fetch("/reset", {
+                method: "POST"
+            });
+        });
+
+        const box = document.querySelector('.box')
+
+        function boxExpand(){
+                if(box.classList.contains('box-mach')){
+                    box.classList.remove('box-mach')
+                }else{
+                    box.classList.add('box-mach')
+                }
+        }
+    </script>
+    
+
+    
+</body>
+</html>

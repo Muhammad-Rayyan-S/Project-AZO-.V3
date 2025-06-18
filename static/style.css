@@ -1,0 +1,209 @@
+@font-face {
+    font-family: Bold;
+    src: url(theboldfont.ttf);
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("bg.gif") center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(27, 27, 27);
+}
+h1{
+    font-family: Bold;
+}
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(80px);
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    margin-top: 130px;
+    margin-bottom: 130px; 
+    transform: scale(0.87);   
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close {
+    cursor: pointer;
+    border-bottom: solid rgba(255, 255, 255, 0.397) 1px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+}
+
+.chat-box {
+    max-height: 400px;
+    overflow-y: auto;
+    margin: 20px 0;
+}
+@keyframes wed {
+ 0%{
+    opacity: 0%;
+ }   
+ 100%{
+    opacity: 100%;
+ }
+}
+
+.bot-bubble, .user-bubble {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 15px;
+    font-size: 14px;
+}
+.bot-bubble{
+    overflow: hidden;
+    animation:  wed 0.2s 1;
+    font-size: 1.1rem;
+}
+.user-bubble{
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0.226);
+    font-size: 1.1rem;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    border: solid white 1px;
+}
+
+button {
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    border: solid white 1px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: white;
+    transition: 0.5s;
+}
+#arrow{
+    color: white;
+}
+#arrow:hover{
+    color: black;
+    transition: 0.5s;
+}
+/* Style the scrollbar */
+#chat-box::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track (background of the scrollbar) */
+  #chat-box::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+  }
+  
+  /* Handle (the scroll thumb) */
+  #chat-box::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+  }
+  
+  /* On hover */
+  #chat-box::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  
+
+  .bot-bubble {
+    line-height: 1.6;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  .bg-seperater{
+    position: absolute;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.781);
+    height:100%;
+    width: 100%;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+  .loader {
+    display: inline-block;
+    position: relative;
+    margin-top: 5px;
+    float: left;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .loader img {
+    filter: invert(100%);
+    width: 100px;
+    height: auto;
+    border-radius: 100%;
+    background: solid;
+    background-color: black;
+    height: 30px;
+    width: 31px;
+    opacity: 60%;
+  }
+  .box{
+    margin-top: 40px;
+    color: rgb(255, 255, 255);
+    background: solid;
+    background-color: rgb(255, 255, 255);
+    height:30px;
+    width: 30px;
+    text-align: center;
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    font-size: 0rem;
+    transition: 0.5s;
+    .close{
+        border-bottom: solid rgba(255, 255, 255, 0.397) 1px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        transition: 0.1s;
+    }
+  }
+  .box-mach{
+    margin-top: 40px;
+    color: rgb(255, 255, 255);
+    background: solid;
+    background-color: rgba(255, 255, 255, 0.082);
+    height: 100px;
+    width: 300px;
+    text-align: center;
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    transition: 0.5s;
+    font-size: 1rem;
+    padding-top: 30px;
+    .close{
+        border-bottom: solid rgba(255, 255, 255, 0.397) 1px;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 10px;
+        transition: 0.5s;
+    }
+  }
+
+  
