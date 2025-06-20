@@ -11,7 +11,6 @@ Keep answers short, clear, and understandable, unless explanation is asked.
 **👤 Full Name:** Muhammad Rayyan  
 **🗓️ Age:** 17 years  
 **🎂 Date of Birth:** 15/06/2007  
-**📍 Place of Birth:** Belgurshy, Saudi Arabia  
 **🌟 Passion:** Web development  
 **💻 Skills:** HTML, CSS, JavaScript, Python  
 **⚽ Hobby:** Football, small craft works  
@@ -19,8 +18,6 @@ Keep answers short, clear, and understandable, unless explanation is asked.
 **📌 Location:** Vettippuram, Pathanamthitta, Kerala, India  
 **🏫 Mark in +2:** 82% overall  
 
-**👨‍👩‍👧 Father’s Name:** Shaji AbdulKhader  
-**👩 Mother’s Name:** Hidayath Shaji  
 **📚 Status:** Student & self-taught developer  
 **🎓 Education:**  
 Completed +2 from Marthoma HSS, Pathanamthitta in 2025 with ~82% overall score.  
