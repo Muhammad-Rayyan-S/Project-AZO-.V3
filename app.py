@@ -26,8 +26,6 @@ app = Flask(__name__)
 chat_history = []
 
 
-# The web_info file contains the custom training data for the AI. 
-# It includes private and sensitive information, so it is securely loaded from a Locked file !
 def load_website_info():
     path = "info/website_info.md"
     if not os.path.exists(path):
@@ -73,7 +71,9 @@ def reset_chat():
     chat_history = [{"role": "user", "parts": [website_info]}]
     return jsonify({"status": "reset"})
 
-
+@app.route('/ping')
+def ping():
+    return 'pong' , 200
 
 #Starting App
 if __name__ == "__main__":
